@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>瞬富天下</title>
+	<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="wrapper">
+	<div class="top">
+		<div class="logo-wrapper">
+			<img src="./images/logo.png" alt="" class="logo">
+		</div>
+		<div class="top-info flex-fill">
+			<div class="btns flex">
+				<a href="javascript:;">[退出]</a>
+				<span class="line">|</span>
+				<a href="javascript:;">[信息维护]</a>
+				<span class="line">|</span>
+				<a href="javascript:;">首页</a>
+				<span class="line">|</span>
+				<a class="real" href="javascript:;">实名认证</a>
+			</div>
+			<div class="welcome">欢迎您!瞬富天下(超级管理员)</div>
+			<div class="tabs">
+				<div class="tab-item">代理商管理</div>
+				<div class="tab-item">财务管理</div>
+				<div class="tab-item">增值服务</div>
+				<div class="tab-item active">无卡付管理</div>
+				<div class="tab-item">系统管理</div>
+				<div class="tab-item">POS 管理</div>
+			</div>
+		</div>
+	</div>
+	<div class="content flex">
+		<div class="side">
+			<div class="side-bar">
+				<img src="./images/caret.png" alt="" class="side-img">
+			</div>
+			<div class="navs">
+				<div class="nav-item">
+					<div class="nav-title">无pos商户</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">交易管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">结算管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">营销管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">风控管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">财务处理</div>
+					<div class="nav-children">
+						<a href="" class="nav-child">瞬鑫通道信息</a>
+						<a href="" class="nav-child">资金冻结</a>
+						<a href="" class="nav-child">调账经办</a>
+						<a href="" class="nav-child">调账复核</a>
+						<a href="" class="nav-child">调账查询</a>
+					</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">推广码管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">接口商户管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">客户端管理</div>
+				</div>
+				<div class="nav-item">
+					<div class="nav-title">门店管理</div>
+				</div>
+			</div>
+		</div>
+		<div class="right-content flex-fill">
+			<div class="row">
+				<div class="col-12 col-lg-6 col-xl-3">
+					<div class="card">
+						<div class="card-title">
+							收入
+							<div class="tag">月</div>
+						</div>
+						<div class="card-body">
+							<div class="count">40,880,200</div>
+							<div class="bottom">
+								<div class="label">总收入</div>
+								<div class="value">
+									98% <img src="./images/icon1.png" alt="" class="icon">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 col-xl-3">
+					<div class="card year">
+						<div class="card-title">
+							订单
+							<div class="tag">全年</div>
+						</div>
+						<div class="card-body">
+							<div class="count">275,800</div>
+							<div class="bottom">
+								<div class="label">新订单</div>
+								<div class="value">
+									20% <img src="./images/icon2.png" alt="" class="icon">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 col-xl-3">
+					<div class="card day">
+						<div class="card-title">
+							访客
+							<div class="tag">今天</div>
+						</div>
+						<div class="card-body">
+							<div class="count">106,120</div>
+							<div class="bottom">
+								<div class="label">新访客</div>
+								<div class="value">
+									44% <img src="./images/icon3.png" alt="" class="icon">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 col-xl-3">
+					<div class="card month">
+						<div class="card-title">
+							活跃用户
+							<div class="tag">最近一个月</div>
+						</div>
+						<div class="card-body">
+							<div class="count">80,600</div>
+							<div class="bottom">
+								<div class="label">总收入</div>
+								<div class="value">
+									12月 <img src="./images/icon4.png" alt="" class="icon">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card chart-card" style="margin: 30px 0;">
+				<div class="card-title flex justify-content-between">
+					订单
+					<div class="btn-group">
+						<button type="button" class="btn">天</button>
+						<button type="button" class="btn">月</button>
+						<button type="button" class="btn">年</button>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-9">
+							<div id="chart" style="height: 300px;"></div>
+						</div>
+						<div class="col-3">
+							<div class="order">
+								<div class="order-item">
+									<div class="title">2,346</div>
+									<div class="order-progress">
+										<div class="top">
+											<div class="text">订单总数</div>
+											<div class="right">
+												<div class="percent">44%</div>
+												<img src="./images/icon3.png" alt="">
+											</div>
+										</div>
+										<div class="progress-wrapper">
+											<div class="progress" style="width: 70%"></div>
+										</div>
+									</div>
+								</div>
+								<div class="order-item">
+									<div class="title">4,422</div>
+									<div class="order-progress">
+										<div class="top">
+											<div class="text">订单总数</div>
+											<div class="right">
+												<div class="percent">44%</div>
+												<img src="./images/icon3.png" alt="">
+											</div>
+										</div>
+										<div class="progress-wrapper">
+											<div class="progress" style="width: 70%"></div>
+										</div>
+									</div>
+								</div>
+								<div class="order-item">
+									<div class="title">9,180</div>
+									<div class="order-progress">
+										<div class="top">
+											<div class="text">订单总数</div>
+											<div class="right">
+												<div class="percent">44%</div>
+												<img src="./images/icon3.png" alt="">
+											</div>
+										</div>
+										<div class="progress-wrapper">
+											<div class="progress" style="width: 70%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="row">
+					<div class="col-12 col-lg-6 col-xl-4">
+						<div class="card">
+							<div class="card-title">
+								消息
+								<div class="extra">
+									<img src="./images/dropdown-icon.png" alt="" class="dropdown-img">
+									<img src="./images/close-icon.png" alt="" class="close-icon">
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="message-list">
+									<a href="javascript:;" class="message-item">
+										<img src="./images/message.png" class="icon" alt="">
+										<div class="message-text">新消息</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 col-xl-4">
+						<div class="card year">
+							<div class="card-title">
+								用户项目列表
+								<div class="extra">
+									<img src="./images/dropdown-icon.png" alt="" class="dropdown-img">
+									<img src="./images/close-icon.png" alt="" class="close-icon">
+								</div>
+							</div>
+							<div class="card-body" style="padding: 10px;">
+								<table class="table mb-0">
+									<thead>
+									<tr>
+										<th>状态</th>
+										<th>日期</th>
+										<th>用户</th>
+										<th>值</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>状态1</td>
+										<td>日期1</td>
+										<td>用户1</td>
+										<td>值1</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 col-xl-4">
+						<div class="card day">
+							<div class="card-title">
+								任务列表
+								<div class="extra">
+									<img src="./images/dropdown-icon.png" alt="" class="dropdown-img">
+									<img src="./images/close-icon.png" alt="" class="close-icon">
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="task-list">
+									<label class="task-item">
+										<input class="checkbox" checked type="checkbox">
+										开会
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				©2021 <a href="">瞬富后台管理系统</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/echarts/echarts.min.js"></script>
+<script>
+$(function () {
+	var xData = []
+	var yData = []
+	var y2Data = []
+	for (var i = 0; i < 31; i++) {
+		xData.push('1月' + (i + 1))
+	}
+	for (var j = 0; j < xData.length; j++) {
+		yData.push(400 + parseInt(Math.random() * 400))
+	}
+	for (var k = 0; k < 31; k++) {
+		y2Data.push(parseInt(5 + Math.random() * 10))
+	}
+	var chart = echarts.init($('#chart')[0])
+	chart.setOption({
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				type: 'cross',
+				crossStyle: {
+					color: '#999'
+				}
+			}
+		},
+		grid: {
+			left: 40,
+			right: 40,
+			bottom: 30
+		},
+		legend: {
+			left: 0,
+			data: [
+				{name: '订单数', icon: 'rect'},
+				{name: '付款数', icon: 'rect'}
+			]
+		},
+		xAxis: [
+			{
+				type: 'category',
+				data: xData,
+				axisPointer: {
+					type: 'shadow'
+				}
+			},
+			{
+				type: 'category',
+				boundaryGap: false // 不留白，从原点开始
+			}
+		],
+		yAxis: [
+			{
+				type: 'value',
+				min: 0,
+				max: 1000,
+			},
+			{
+				type: 'value',
+				min: 0,
+				splitLine: false,
+				max: 30,
+			}
+		],
+		series: [
+			{
+				name: '订单数',
+				type: 'bar',
+				itemStyle: {
+					color: '#9edfd2'
+				},
+				data: yData
+			},
+			{
+				name: '付款数',
+				type: 'line',
+				areaStyle: {},
+				yAxisIndex: 1,
+				xAxisIndex: 1,
+				symbolSize: 0,
+				itemStyle: {
+					color: '#68879d',
+				},
+				emphasis: {
+					focus: 'series'
+				},
+				data: y2Data
+			}
+		]
+	})
+	$(window).resize(function () {
+		chart.resize()
+	})
+	$('.nav-item .nav-title').on('click', function () {
+		$(this).parent().find('.nav-children').slideToggle()
+	})
+	$('.side-bar').click(function () {
+		$('.navs').toggle(300)
+		$('.side-bar .side-img').toggleClass('rotate')
+		setTimeout(function () {
+			chart.resize()
+		}, 300)
+	})
+	$('.dropdown-img').click(function () {
+		$(this).toggleClass('rotate')
+		$(this).parents('.card').find('.card-body').slideToggle()
+	})
+	$('.close-icon').click(function () {
+		$(this).parents('.card').parent().remove()
+	})
+	
+})
+</script>
+</body>
+</html>

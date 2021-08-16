@@ -1,0 +1,159 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.card {
+  padding: 0;
+  font-size: 20px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+}
+.card.year .card-title .tag {
+  background: #3fc8c9;
+}
+.card.year .card-body .bottom .value {
+  color: #1bc4c6;
+}
+.card.day .card-title .tag {
+  background: #18b295;
+}
+.card.day .card-body .bottom .value {
+  color: #18b295;
+}
+.card.month .card-title .tag {
+  background: #ec4b5c;
+}
+.card.month .card-body .bottom .value {
+  color: #ec4b5c;
+}
+.card .card-title {
+  position: relative;
+  padding: 17px;
+  margin-bottom: 0;
+  color: #666666;
+  font-weight: bold;
+  border-bottom: 1px solid #dcdcdc;
+}
+.card .card-title .tag {
+  top: 10px;
+  right: 14px;
+  padding: 2px 10px;
+  line-height: 1;
+  position: absolute;
+  background-color: #0b7bc2;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+}
+.card .card-title .extra {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 16px;
+  top: 25px;
+}
+.card .card-title .extra img {
+  margin: 0 5px;
+  cursor: pointer;
+}
+.card .card-title .extra .rotate {
+  transform: rotate(180deg);
+}
+.card .card-body {
+  padding: 20px 25px;
+}
+.card .card-body .count {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #666666;
+}
+.card .card-body .bottom {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #9d9d9d;
+  font-weight: bold;
+}
+.card .card-body .bottom .value {
+  display: flex;
+  align-items: center;
+  color: #0b7bc2;
+}
+.chart-card .btn-group .btn {
+  padding: 4px 6px;
+  line-height: 1;
+  border: 1px solid #d2d2d2;
+  color: #999;
+  font-size: 16px;
+}
+.chart-card .order .order-item:not(:last-of-type) {
+  margin-bottom: 14px;
+}
+.chart-card .order .order-item .title {
+  font-size: 26px;
+  color: #666666;
+}
+.chart-card .order .order-item .order-progress .top {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #999;
+}
+.chart-card .order .order-item .order-progress .top .right {
+  display: flex;
+  align-items: center;
+}
+.chart-card .order .order-item .order-progress .progress-wrapper {
+  height: 8px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+.chart-card .order .order-item .order-progress .progress-wrapper .progress {
+  height: 8px;
+  background-color: #18b295;
+  border-radius: 4px;
+}
+.message-list .message-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #666666;
+  transition: background 0.3s;
+}
+.message-list .message-item .icon {
+  margin-right: 9px;
+}
+.message-list .message-item:hover {
+  background: #f3f6fb;
+  text-decoration: none;
+}
+.task-list .task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  background-color: #f3f3f4;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.task-list .task-item .checkbox {
+  margin-right: 6px;
+  transform: scale(1.2);
+}
+.table thead th {
+  border-bottom-width: 1px;
+}
+.table td,
+.table th {
+  border-top: 0;
+  font-weight: normal;
+}
+.table td {
+  font-size: 16px;
+}
