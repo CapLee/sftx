@@ -16,13 +16,19 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  border: solid 2px #b9c4df;
+  border: solid 1px #b9c4df;
 }
 .filter-wrapper .filter-item {
   display: flex;
   align-items: center;
   align-items: stretch;
   width: 33.33%;
+  border: solid 2px #b9c4df;
+  border-bottom: none;
+  border-right: none;
+}
+.filter-wrapper .filter-item.border-right {
+  border-right: solid 2px #b9c4df !important;
 }
 .filter-wrapper .filter-item .label {
   display: flex;
@@ -32,7 +38,7 @@
   width: 124px;
   height: 48px;
   background-color: #ececec;
-  border: solid 1px #b9c4df;
+  border-right: solid 2px #b9c4df;
 }
 .filter-wrapper .filter-item .group {
   display: flex;
@@ -42,7 +48,6 @@
   flex: 1;
   padding: 7px 6px;
   background-color: #ffffff;
-  border: solid 1px #b9c4df;
 }
 .filter-wrapper .filter-item .item .inp {
   padding: 0 10px;
@@ -67,11 +72,10 @@
 .filter-wrapper .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 9px 200px;
   background-color: #ffffff;
-  border: solid 2px #b9c4df;
-  border-top: 0;
+  border: solid 3px #b9c4df;
+  border-top-width: 2px;
 }
 .filter-wrapper .buttons .btn {
   margin-right: 19px;

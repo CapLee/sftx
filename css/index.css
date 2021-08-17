@@ -4,7 +4,7 @@
 }
 .card {
   padding: 0;
-  font-size: 20px;
+  font-size: 16px;
   background: #fff;
   border: none;
   border-radius: 0;
@@ -45,7 +45,7 @@
   border-radius: 4px;
   color: #fff;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 15px;
 }
 .card .card-title .extra {
   display: flex;
@@ -65,7 +65,7 @@
   padding: 20px 25px;
 }
 .card .card-body .count {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 36px;
   color: #666666;
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 15px;
   color: #9d9d9d;
   font-weight: bold;
 }
@@ -89,13 +89,13 @@
   line-height: 1;
   border: 1px solid #d2d2d2;
   color: #999;
-  font-size: 16px;
+  font-size: 14px;
 }
 .chart-card .order .order-item:not(:last-of-type) {
   margin-bottom: 14px;
 }
 .chart-card .order .order-item .title {
-  font-size: 26px;
+  font-size: 21px;
   color: #666666;
 }
 .chart-card .order .order-item .order-progress .top {
@@ -103,7 +103,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
 }
 .chart-card .order .order-item .order-progress .top .right {

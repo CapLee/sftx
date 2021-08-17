@@ -16,13 +16,24 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  border: solid 2px #b9c4df;
+  border: solid 1px #b9c4df;
 }
 .filter-wrapper .filter-item {
   display: flex;
   align-items: center;
   align-items: stretch;
   width: 33.33%;
+  border: solid 2px #b9c4df;
+  border-bottom: none;
+  border-right: none;
+}
+.filter-wrapper .filter-item.border-right {
+  border-right: solid 2px #b9c4df !important;
+}
+.filter-wrapper .filter-item.border-bottom {
+  margin-top: -1px;
+  transform: translateY(1px);
+  border-bottom: solid 2px #b9c4df !important;
 }
 .filter-wrapper .filter-item .label {
   display: flex;
@@ -32,7 +43,7 @@
   width: 124px;
   height: 48px;
   background-color: #ececec;
-  border: solid 1px #b9c4df;
+  border-right: solid 2px #b9c4df;
 }
 .filter-wrapper .filter-item .group {
   display: flex;
@@ -42,7 +53,6 @@
   flex: 1;
   padding: 7px 6px;
   background-color: #ffffff;
-  border: solid 1px #b9c4df;
 }
 .filter-wrapper .filter-item .item .inp {
   padding: 0 10px;
@@ -70,8 +80,8 @@
   justify-content: center;
   padding: 9px 200px;
   background-color: #ffffff;
-  border: solid 2px #b9c4df;
-  border-top: 0;
+  border: solid 3px #b9c4df;
+  border-top-width: 2px;
 }
 .filter-wrapper .buttons .btn {
   margin-right: 19px;
@@ -111,15 +121,18 @@
   transform: translateY(-50%);
   padding: 0 10px;
   background: #fff;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 15px;
 }
 .content-item .list {
   display: flex;
   align-items: center;
   align-items: stretch;
   flex-wrap: wrap;
-  font-size: 18px;
+  font-size: 15px;
   color: #000;
+  border-left: 2px solid #c7d0e5;
+  border-right: 2px solid #c7d0e5;
 }
 .content-item .list .item-wrapper {
   display: flex;
@@ -144,6 +157,14 @@
   width: 40%;
   background-color: #ececec;
   border: solid 1px #c7d0e5;
+  border-bottom: 0;
+  border-right: 0;
+}
+.content-item .list .item-wrapper .label.border-bottom {
+  border-bottom: 1px solid #c7d0e5;
+}
+.content-item .list .item-wrapper .label.border-left {
+  border-left: 1px solid #c7d0e5;
 }
 .content-item .list .item-wrapper .item {
   display: flex;
@@ -151,6 +172,10 @@
   padding: 8px 6px;
   width: 60%;
   border: solid 1px #c7d0e5;
+  border-bottom: 0;
+}
+.content-item .list .item-wrapper .item.border-bottom {
+  border-bottom: 1px solid #c7d0e5;
 }
 .content-item .list .item-wrapper .item label {
   margin-right: 8px;
@@ -158,7 +183,6 @@
 }
 .content-item .list .item-wrapper .item label input {
   margin-right: 4px;
-  transform: scale(1.2);
 }
 .content-item .list .item-wrapper .item .inp,
 .content-item .list .item-wrapper .item .select {

@@ -8,13 +8,19 @@
   align-items: center;
 }
 .logo-wrapper {
-  padding-left: 24px;
-  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 225px;
   background: #fff;
+}
+.logo-wrapper .logo {
+  width: 180px;
 }
 body,
 html {
   height: 100%;
+  font-family: 微软雅黑;
 }
 .wrapper {
   align-items: center;
@@ -31,7 +37,7 @@ html {
 .top-info {
   position: relative;
   background-color: #31849b;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 .top-info .btns {
@@ -53,7 +59,7 @@ html {
   border-bottom: 2px solid #05c463;
 }
 .top-info .welcome {
-  margin: 14px 0;
+  margin: 12px 0;
   margin-left: 20px;
   color: #fff;
 }
@@ -69,10 +75,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  height: 54px;
+  padding: 0 23px;
+  height: 44px;
   background-color: #205867;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
   border: solid 2px #0b1f24;
   color: #ffffff;
   cursor: pointer;
@@ -89,27 +95,27 @@ html {
 .content .side {
   position: relative;
   align-self: stretch;
-  padding-right: 28px;
-  font-size: 20px;
+  padding-right: 23px;
+  font-size: 16px;
   font-weight: bold;
   z-index: 1;
   background: #2d3e4f;
 }
 .content .side .navs {
-  margin: 10px;
+  margin: 8px;
   margin-right: 0;
-  width: 242px;
+  width: 194px;
   background: #fff;
 }
 .content .side .navs .nav-item .nav-title {
-  padding: 12px 24px;
+  padding: 10px 20px;
   color: #000000;
   border-bottom: 1px solid #959595;
   cursor: pointer;
 }
 .content .side .navs .nav-item .nav-children {
-  font-size: 18px;
-  padding: 0 24px;
+  font-size: 15px;
+  padding: 0 20px;
 }
 .content .side .navs .nav-item .nav-children .nav-child {
   padding: 8px 0;
@@ -118,7 +124,7 @@ html {
   font-weight: normal;
 }
 .content .side .side-bar {
-  width: 28px;
+  width: 23px;
   right: 0;
   height: 100%;
   position: absolute;
@@ -127,8 +133,8 @@ html {
 }
 .content .side .side-img {
   position: absolute;
-  top: 138px;
-  right: 10px;
+  top: 110px;
+  right: 8px;
 }
 .content .side .side-img.rotate {
   transform: rotate(180deg);

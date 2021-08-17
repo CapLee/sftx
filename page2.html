@@ -7,9 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>瞬富天下</title>
 	<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./lib/datepicker/datepicker.css">
 	<link rel="stylesheet" href="./lib/layui/css/layui.css">
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/page2.css">
 </head>
 <body>
@@ -111,7 +111,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter-item">
+					<div class="filter-item border-right">
 						<div class="label">商户名称：</div>
 						<div class="item">
 							<div class="group">
@@ -135,7 +135,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter-item">
+					<div class="filter-item border-right">
 						<div class="label">结算卡号：</div>
 						<div class="item">
 							<div class="group">
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter-item">
+					<div class="filter-item border-right">
 						<div class="label">qq编号：</div>
 						<div class="item">
 							<div class="group">
@@ -195,7 +195,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter-item" style="width: 66.67%">
+					<div class="filter-item border-right" style="width: 66.67%">
 						<div class="label">注册日期：</div>
 						<div class="item">
 							<div class="group">
@@ -247,25 +247,25 @@ $(function () {
 		elem: '#table',
 		align: 'center',
 		cols: [[ //表头
-			{field: 'id', title: '序号'},
-			{field: 'username', title: '所属代理'},
-			{field: 'sex', title: '商户号'},
-			{field: 'city', title: '手机号'},
-			{field: 'sign', title: '商户名称'},
-			{field: 'experience', title: '商户经营名称'},
-			{field: 'score', title: '注册日期'},
-			{field: 'classify', title: '实名日期'},
-			{field: 'v1', title: '会员有效期'},
-			{field: 'v2', title: '商户类别'},
-			{field: 'v3', title: 'APP'},
-			{field: 'v4', title: '保险状态'},
-			{field: 'v5', title: '是否实名'},
-			{field: 'v6', title: '备注'},
-			{field: 'v7', title: '操作'},
+			{width: 60, field: 'id', title: '序号'},
+			{width: 160, field: 'username', title: '所属代理'},
+			{width: 110, field: 'sex', title: '商户号'},
+			{width: 110, field: 'city', title: '手机号'},
+			{width: 110, field: 'sign', title: '商户名称'},
+			{width: 120, field: 'experience', title: '商户经营名称'},
+			{width: 120, field: 'score', title: '注册日期'},
+			{width: 120, field: 'classify', title: '实名日期'},
+			{width: 120, field: 'v1', title: '会员有效期'},
+			{width: 120, field: 'v2', title: '商户类别'},
+			{width: 120, field: 'v3', title: 'APP'},
+			{width: 120, field: 'v4', title: '保险状态'},
+			{width: 120, field: 'v5', title: '是否实名'},
+			{width: 120, field: 'v6', title: '备注'},
+			{width: 190, field: 'v7', title: '操作'},
 		]],
 		data: [
 			{
-				id: '测试数据',
+				id: '1',
 				username: '测试数据',
 				sex: '测试数据',
 				city: '测试数据',

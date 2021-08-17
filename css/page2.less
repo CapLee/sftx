@@ -19,14 +19,19 @@
   .filter-list {
     .flex;
     flex-wrap: wrap;
-    border: solid 2px #b9c4df;
+    border: solid 1px #b9c4df;
   }
 
   .filter-item {
     .flex;
     align-items: stretch;
     width: 33.33%;
-
+    border: solid 2px #b9c4df;
+    border-bottom: none;
+    border-right: none;
+    &.border-right {
+      border-right: solid 2px #b9c4df!important;
+    }
     .label {
       .flex;
       justify-content: flex-end;
@@ -34,7 +39,7 @@
       width: 124px;
       height: 48px;
       background-color: #ececec;
-      border: solid 1px #b9c4df;
+      border-right: solid 2px #b9c4df;
     }
 
     .group {
@@ -45,7 +50,7 @@
       flex: 1;
       padding: 7px 6px;
       background-color: #ffffff;
-      border: solid 1px #b9c4df;
+      //border: solid 1px #b9c4df;
 
       .inp {
         padding: 0 10px;
@@ -72,11 +77,11 @@
 
   .buttons {
     .flex;
-    justify-content: center;
+    //justify-content: center;
     padding: 9px 200px;
     background-color: #ffffff;
-    border: solid 2px #b9c4df;
-    border-top: 0;
+    border: solid 3px #b9c4df;
+    border-top-width: 2px;
 
     .btn {
       margin-right: 19px;
