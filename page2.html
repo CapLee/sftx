@@ -59,6 +59,13 @@
 				</div>
 				<div class="nav-item">
 					<div class="nav-title">风控管理</div>
+					<div class="nav-children" style="display: none;">
+						<a href="" class="nav-child">瞬鑫通道信息</a>
+						<a href="" class="nav-child">资金冻结</a>
+						<a href="" class="nav-child">调账经办</a>
+						<a href="" class="nav-child">调账复核</a>
+						<a href="" class="nav-child">调账查询</a>
+					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-title">财务处理</div>
@@ -242,6 +249,7 @@
 $(function () {
 	moment.locale('zh-cn')
 	$('.nav-item .nav-title').on('click', function () {
+		$(this).parent().siblings().find('.nav-children').slideUp()
 		$(this).parent().find('.nav-children').slideToggle()
 	})
 	$('.nav-children .nav-child').click(function (e) {

@@ -362,6 +362,7 @@
 $(function () {
 	moment.locale('zh-cn')
 	$('.nav-item .nav-title').on('click', function () {
+		$(this).parent().siblings().find('.nav-children').slideUp()
 		$(this).parent().find('.nav-children').slideToggle()
 	})
 	$('.nav-children .nav-child').click(function (e) {

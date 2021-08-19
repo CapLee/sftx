@@ -132,3 +132,7 @@
 .layui-table-cell {
   padding: 0 4px;
 }
+.layui-table,
+.layui-table-view {
+  margin-bottom: 0;
+}
