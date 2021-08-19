@@ -84,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="right-content flex-fill">
+		<div class="right-content flex-fill" style="padding-bottom: 0;">
 			<div class="filter-wrapper">
 				<div class="filter-title">商户信息变更</div>
 				<div class="filter-list">
@@ -261,7 +261,7 @@ $(function () {
 	var laypage = layui.laypage
 	init()
 	function init() {
-		var height = $('body').height() - 43 - parseInt($('.top').css('height')) - parseInt($('.filter-wrapper').css('height'))
+		var height = $('body').height() - 20 - parseInt($('.top').css('height')) - parseInt($('.filter-wrapper').css('height'))
 		table.render({
 			elem: '#table',
 			align: 'center',
