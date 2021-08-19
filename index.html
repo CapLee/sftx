@@ -15,7 +15,7 @@
 <div class="wrapper">
 	<div class="top">
 		<div class="logo-wrapper">
-			<img src="./images/logo.png" alt="" class="logo">
+			<img src="./images/logo.jpg" alt="" class="logo">
 		</div>
 		<div class="top-info flex-fill">
 			<div class="btns flex">
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class="right-content flex-fill">
-			<div class="row">
+			<div class="row order">
 				<div class="col-12 col-lg-6 col-xl-3">
 					<div class="card">
 						<div class="card-title">
@@ -396,6 +396,10 @@ $(function () {
 	})
 	$('.nav-item .nav-title').on('click', function () {
 		$(this).parent().find('.nav-children').slideToggle()
+	})
+	$('.nav-children .nav-child').click(function (e) {
+		e.preventDefault()
+		$(this).addClass('active').siblings().removeClass('active')
 	})
 	$('.side-bar').click(function () {
 		$('.navs').toggle(300)

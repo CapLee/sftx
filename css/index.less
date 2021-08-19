@@ -2,9 +2,14 @@
   display: flex;
   align-items: center;
 }
+.order {
+  .card {
+    margin-bottom: 10px;
+  }
+}
 .card {
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
   background: #fff;
   border: none;
   border-radius: 0;
@@ -34,7 +39,7 @@
   }
   .card-title {
     position: relative;
-    padding: 17px;
+    padding: 10px 17px;
     margin-bottom: 0;
     color: #666666;
     font-weight: bold;
@@ -49,13 +54,13 @@
       border-radius: 4px;
       color: #fff;
       font-weight: normal;
-      font-size: 15px;
+      font-size: 12px;
     }
     .extra {
       .flex;
       position: absolute;
-      right: 16px;
-      top: 25px;
+      right: 12px;
+      top: 14px;
       img {
         margin: 0 5px;
         cursor: pointer;
@@ -66,20 +71,23 @@
     }
   }
   .card-body {
-    padding: 20px 25px;
+    padding: 16px 22px;
     .count {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
-      line-height: 36px;
+      line-height: 30px;
       color: #666666;
     }
     .bottom {
       margin-top: 10px;
       .flex;
       justify-content: space-between;
-      font-size: 15px;
+      font-size: 12px;
       color: #9d9d9d;
       font-weight: bold;
+      img {
+        margin-left: 2px;
+      }
       .value {
         .flex;
         color: #0b7bc2;
@@ -94,7 +102,7 @@
       line-height: 1;
       border: 1px solid #d2d2d2;
       color: #999;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
   .order {
@@ -134,7 +142,7 @@
 .message-list {
   .message-item {
     .flex;
-    padding: 20px;
+    padding: 16px;
     color: #666666;
     transition: background .3s;
     .icon {

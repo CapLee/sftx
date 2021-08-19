@@ -4,14 +4,16 @@
 }
 
 .filter-wrapper {
+  max-width: 890px;
   .filter-title {
     padding: 8px 10px;
     .flex;
-    height: 38px;
+    height: 30px;
     background-image: linear-gradient(0deg,
     #e1e1e1 0%,
     #f0f0f0 100%);
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 14px;
     color: #000;
     border: solid 1px #d9d9d9;
   }
@@ -29,6 +31,7 @@
     border: solid 2px #b9c4df;
     border-bottom: none;
     border-right: none;
+    color: #000;
     &.border-right {
       border-right: solid 2px #b9c4df!important;
     }
@@ -36,8 +39,9 @@
       .flex;
       justify-content: flex-end;
       padding: 0 8px;
-      width: 124px;
-      height: 48px;
+      width: 92px;
+      height: 28px;
+      font-size: 12px;
       background-color: #ececec;
       border-right: solid 2px #b9c4df;
     }
@@ -48,28 +52,36 @@
 
     .item {
       flex: 1;
-      padding: 7px 6px;
+      padding: 3px 2px;
       background-color: #ffffff;
+      font-size: 12px;
       //border: solid 1px #b9c4df;
 
       .inp {
-        padding: 0 10px;
         flex: 1;
         width: 100%;
-        font-size: 14px;
-        height: 30px;
-        border: solid 1px #949494;
-        border-radius: 1px;
+        font-size: 12px;
+        height: 19px;
+          border: solid 1px rgb(118, 118, 118);
+        border-radius: 2px;
+        &:focus {
+          border: solid 2px #000
+        }
+        &.select:focus {
+          border: solid 1px rgb(118, 118, 118);
+        }
       }
 
       .btn {
+        padding: 0 2px;
         .flex;
         flex-shrink: 0;
+        margin-right: 10px;
         justify-content: center;
-        height: 30px;
+        height: 20px;
         background-color: #ededee;
         border-radius: 2px;
-        font-size: 14px;
+        font-size: 12px;
         border: solid 1px #949494;
       }
     }
@@ -85,9 +97,9 @@
 
     .btn {
       margin-right: 19px;
+      width: 95px;
       .flex;
       justify-content: center;
-      padding: 0 10px;
       height: 30px;
       background-image: linear-gradient(0deg,
       #c61009 0%,
@@ -106,8 +118,26 @@
     }
   }
 }
+.date-wrapper {
+  .date-btn {
+    margin: 0 4px;
+    cursor: pointer;
+    border: none!important;
+    background: transparent;
+  }
+}
 
 .table-wrapper {
   width: 100%;
   overflow: auto;
+}
+.layui-table td, .layui-table th {
+  font-size: 12px;
+}
+.nextBtn {
+  color: red;
+  font-weight: bold;
+  &:hover {
+    color: red
+  }
 }

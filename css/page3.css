@@ -2,13 +2,17 @@
   display: flex;
   align-items: center;
 }
+.filter-wrapper {
+  max-width: 890px;
+}
 .filter-wrapper .filter-title {
   padding: 8px 10px;
   display: flex;
   align-items: center;
-  height: 38px;
+  height: 30px;
   background-image: linear-gradient(0deg, #e1e1e1 0%, #f0f0f0 100%);
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 14px;
   color: #000;
   border: solid 1px #d9d9d9;
 }
@@ -26,13 +30,12 @@
   border: solid 2px #b9c4df;
   border-bottom: none;
   border-right: none;
+  color: #000;
 }
 .filter-wrapper .filter-item.border-right {
   border-right: solid 2px #b9c4df !important;
 }
 .filter-wrapper .filter-item.border-bottom {
-  margin-top: -1px;
-  transform: translateY(1px);
   border-bottom: solid 2px #b9c4df !important;
 }
 .filter-wrapper .filter-item .label {
@@ -40,8 +43,9 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 8px;
-  width: 124px;
-  height: 48px;
+  width: 92px;
+  height: 28px;
+  font-size: 12px;
   background-color: #ececec;
   border-right: solid 2px #b9c4df;
 }
@@ -51,33 +55,40 @@
 }
 .filter-wrapper .filter-item .item {
   flex: 1;
-  padding: 7px 6px;
+  padding: 3px 2px;
   background-color: #ffffff;
+  font-size: 12px;
 }
 .filter-wrapper .filter-item .item .inp {
-  padding: 0 10px;
   flex: 1;
   width: 100%;
-  font-size: 14px;
-  height: 30px;
-  border: solid 1px #949494;
-  border-radius: 1px;
+  font-size: 12px;
+  height: 19px;
+  border: solid 1px #767676;
+  border-radius: 2px;
+}
+.filter-wrapper .filter-item .item .inp:focus {
+  border: solid 2px #000;
+}
+.filter-wrapper .filter-item .item .inp.select:focus {
+  border: solid 1px #767676;
 }
 .filter-wrapper .filter-item .item .btn {
+  padding: 0 2px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  margin-right: 10px;
   justify-content: center;
-  height: 30px;
+  height: 20px;
   background-color: #ededee;
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 12px;
   border: solid 1px #949494;
 }
 .filter-wrapper .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 9px 200px;
   background-color: #ffffff;
   border: solid 3px #b9c4df;
@@ -85,10 +96,10 @@
 }
 .filter-wrapper .buttons .btn {
   margin-right: 19px;
+  width: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
   height: 30px;
   background-image: linear-gradient(0deg, #c61009 0%, #e7420b 100%), linear-gradient(#000000, #000000);
   background-blend-mode: normal,
@@ -99,6 +110,12 @@
 }
 .filter-wrapper .buttons .btn .icon {
   margin-right: 8px;
+}
+.date-wrapper .date-btn {
+  margin: 0 4px;
+  cursor: pointer;
+  border: none!important;
+  background: transparent;
 }
 .content .right-content {
   background: #fff;
@@ -122,14 +139,14 @@
   padding: 0 10px;
   background: #fff;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
 }
 .content-item .list {
   display: flex;
   align-items: center;
   align-items: stretch;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 14px;
   color: #000;
   border-left: 2px solid #c7d0e5;
   border-right: 2px solid #c7d0e5;
@@ -150,11 +167,13 @@
   width: 80%;
 }
 .content-item .list .item-wrapper .label {
-  padding: 8px 6px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 0 8px;
   width: 40%;
+  height: 28px;
+  font-size: 12px;
   background-color: #ececec;
   border: solid 1px #c7d0e5;
   border-bottom: 0;
@@ -167,9 +186,12 @@
   border-left: 1px solid #c7d0e5;
 }
 .content-item .list .item-wrapper .item {
+  flex: 1;
   display: flex;
   align-items: center;
-  padding: 8px 6px;
+  padding: 3px 6px;
+  background-color: #ffffff;
+  font-size: 12px;
   width: 60%;
   border: solid 1px #c7d0e5;
   border-bottom: 0;
@@ -186,13 +208,20 @@
 }
 .content-item .list .item-wrapper .item .inp,
 .content-item .list .item-wrapper .item .select {
-  display: inline-block;
-  width: auto;
-  padding: 0 8px;
-  height: 30px;
-  background-color: #ffffff;
+  width: 115px;
+  font-size: 12px;
+  padding: 1px 2px;
+  height: 21px;
+  border: solid 1px #767676;
   border-radius: 2px;
-  border: solid 1px #949494;
+}
+.content-item .list .item-wrapper .item .inp:focus,
+.content-item .list .item-wrapper .item .select:focus {
+  border: solid 2px #000;
+}
+.content-item .list .item-wrapper .item .inp.select:focus,
+.content-item .list .item-wrapper .item .select.select:focus {
+  border: solid 1px #767676;
 }
 .content-item .list .item-wrapper .item .desc {
   margin-left: 8px;

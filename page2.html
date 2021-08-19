@@ -16,7 +16,7 @@
 <div class="wrapper">
 	<div class="top">
 		<div class="logo-wrapper">
-			<img src="./images/logo.png" alt="" class="logo">
+			<img src="./images/logo.jpg" alt="" class="logo">
 		</div>
 		<div class="top-info flex-fill">
 			<div class="btns flex">
@@ -92,7 +92,7 @@
 						<div class="label">所属代理：</div>
 						<div class="item">
 							<div class="group">
-								<select class="inp form-control">
+								<select class="inp select">
 									<option selected>全部.</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -147,7 +147,7 @@
 						<div class="label">商户类别：</div>
 						<div class="item">
 							<div class="group">
-								<select class="inp form-control">
+								<select class="inp select">
 									<option selected>全部.</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -160,7 +160,7 @@
 						<div class="label">商户状态：</div>
 						<div class="item">
 							<div class="group">
-								<select class="inp form-control">
+								<select class="inp select">
 									<option selected>全部.</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -173,7 +173,7 @@
 						<div class="label">qq编号：</div>
 						<div class="item">
 							<div class="group">
-								<select class="inp form-control">
+								<select class="inp select">
 									<option selected>全部.</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -186,7 +186,7 @@
 						<div class="label">保险状态：</div>
 						<div class="item">
 							<div class="group">
-								<select class="inp form-control">
+								<select class="inp select">
 									<option selected>全部.</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -197,9 +197,15 @@
 					</div>
 					<div class="filter-item border-right" style="width: 66.67%">
 						<div class="label">注册日期：</div>
-						<div class="item">
+						<div class="item flex date-wrapper">
 							<div class="group">
-								<input class="inp" id="dateRange" type="text">
+								<input type="text" class="inp" id="startDate">
+								<div class="date-btn" type="button" onclick="WdatePicker({el:'startDate'})"><img src="./images/date.jpg" alt=""></div>
+							</div>
+							<span style="margin: 0 4px">至</span>
+							<div class="group">
+								<input type="text" class="inp" id="endDate">
+								<div class="date-btn" type="button" onclick="WdatePicker({el:'endDate'})"><img src="./images/date.jpg" alt=""></div>
 							</div>
 						</div>
 					</div>
@@ -208,10 +214,6 @@
 					<div class="btn">
 						<img src="./images/search.png" alt="" class="icon">
 						查询
-					</div>
-					<div class="btn">
-						<img src="./images/search.png" alt="" class="icon">
-						下载
 					</div>
 				</div>
 			</div>
@@ -225,13 +227,25 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/datepicker/moment.min.js"></script>
 <script src="./lib/datepicker/moment-with-locales.js"></script>
-<script src="./lib/datepicker/datepicker.js"></script>
 <script src="./lib/layui/layui.all.js"></script>
+<script src="./js/WdatePicker.js"></script>
+<script type="text/html" id="action">
+	<a href="/agent/perform8120_1.do?merId=M2106280120655" class="nextBtn">详情</a>&nbsp;
+	<a href="/agent/perform8120_5.do?merId=M2106280120655" class="nextBtn">下级商户</a>&nbsp;
+	<a href="/agent/control8450.do?merId=M2106280120655" class="nextBtn">通知</a>&nbsp;
+	<a href="/agent/perform8120_3.do?merId=M2106280120655" class="nextBtn">收款二维码</a>
+	<a href="/agent/perform8120_7.do?merId=M2106280120655" class="nextBtn">通讯簿</a>
+	<a href="#" onclick="chkSafeOne('M2106280120655');" class="nextBtn">赠送保险</a>
+</script>
 <script>
 $(function () {
 	moment.locale('zh-cn')
 	$('.nav-item .nav-title').on('click', function () {
 		$(this).parent().find('.nav-children').slideToggle()
+	})
+	$('.nav-children .nav-child').click(function (e) {
+		e.preventDefault()
+		$(this).addClass('active').siblings().removeClass('active')
 	})
 	$('.side-bar').click(function () {
 		$('.navs').toggle(300)
@@ -240,46 +254,48 @@ $(function () {
 			chart.resize()
 		}, 300)
 	})
-	$('#dateRange').daterangepicker()
+	$('#startDate').val(moment().add(-100, 'days').format('YYYY-MM-DD'))
+	$('#endDate').val(moment().format('YYYY-MM-DD'))
 	var table = layui.table
 	//第一个实例
+	var height = $('body').height() - 43 - parseInt($('.top').css('height')) - parseInt($('.filter-wrapper').css('height'))
 	table.render({
 		elem: '#table',
 		align: 'center',
+		height: height,
 		cols: [[ //表头
 			{width: 60, field: 'id', title: '序号'},
-			{width: 160, field: 'username', title: '所属代理'},
-			{width: 110, field: 'sex', title: '商户号'},
-			{width: 110, field: 'city', title: '手机号'},
-			{width: 110, field: 'sign', title: '商户名称'},
-			{width: 120, field: 'experience', title: '商户经营名称'},
-			{width: 120, field: 'score', title: '注册日期'},
-			{width: 120, field: 'classify', title: '实名日期'},
-			{width: 120, field: 'v1', title: '会员有效期'},
-			{width: 120, field: 'v2', title: '商户类别'},
-			{width: 120, field: 'v3', title: 'APP'},
-			{width: 120, field: 'v4', title: '保险状态'},
-			{width: 120, field: 'v5', title: '是否实名'},
-			{width: 120, field: 'v6', title: '备注'},
-			{width: 190, field: 'v7', title: '操作'},
+			{width: 240, field: 'v1', title: '所属代理'},
+			{width: 160, field: 'v2', title: '商户号'},
+			{width: 110, field: 'v3', title: '手机号'},
+			{width: 110, field: 'v4', title: '商户名称'},
+			{width: 160, field: 'v5', title: '商户经营名称'},
+			{width: 160, field: 'v6', title: '注册日期'},
+			{width: 120, field: 'v7', title: '实名日期'},
+			{width: 120, field: 'v8', title: '会员有效期'},
+			{width: 120, field: 'v9', title: '商户类别'},
+			{width: 120, field: 'v10', title: 'APP'},
+			{width: 120, field: 'v11', title: '保险状态'},
+			{width: 120, field: 'v12', title: '是否实名'},
+			{width: 120, field: 'v13', title: '备注'},
+			{width: 300, align: 'center', field: 'v14', title: '操作', templet: '#action'},
 		]],
 		data: [
 			{
 				id: '1',
-				username: '测试数据',
-				sex: '测试数据',
-				city: '测试数据',
-				sign: '测试数据',
-				experience: '测试数据',
-				score: '测试数据',
-				classify: '测试数据',
-				v1: '测试数据',
-				v2: '测试数据',
-				v3: '测试数据',
-				v4: '测试数据',
-				v5: '测试数据',
-				v6: '测试数据',
-				v7: '测试数据',
+				v1: '[C17111700663]无卡支付-0023',
+				v2: 'M2106280120655',
+				v3: '13930471818',
+				v4: '揭小花',
+				v5: '揭小花',
+				v6: '2021-06-28 20:35:03',
+				v7: '2021-06-28',
+				v8: '2099-01-01',
+				v9: '合伙人',
+				v10: '瞬富天下',
+				v11: '未赠送',
+				v12: '实名通过',
+				v13: ''
 			}
 		],
 		page: {
