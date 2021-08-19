@@ -129,3 +129,6 @@
 .nextBtn:hover {
   color: red;
 }
+.layui-table-cell {
+  padding: 0 4px;
+}
