@@ -136,3 +136,26 @@
 .layui-table-view {
   margin-bottom: 0;
 }
+#page {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+#page .buttons {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+}
+#page .buttons a {
+  margin: 0 2px;
+}
+#page .buttons input {
+  width: 30px;
+  border: 1px solid #000;
+}
+#page .buttons input:focus {
+  border: 2px solid #000;
+  border-radius: 4px;
+}

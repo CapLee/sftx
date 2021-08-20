@@ -222,11 +222,16 @@
 						<img src="./images/search.png" alt="" class="icon">
 						查询
 					</div>
+					<div class="btn">
+						<img src="./images/search.png" alt="" class="icon">
+						下载
+					</div>
 				</div>
 			</div>
 			<div class="table-wrapper" style="background: #fff;">
 				<table id="table"></table>
-				<section id="page" style="margin-left: 10px;"></section>
+				<section id="page" style="margin-left: 10px;">
+				</section>
 			</div>
 		</div>
 	</div>
@@ -266,7 +271,6 @@ $(function () {
 	$('#startDate').val(moment().add(-100, 'days').format('YYYY-MM-DD'))
 	$('#endDate').val(moment().format('YYYY-MM-DD'))
 	var table = layui.table
-	var laypage = layui.laypage
 	init()
 	function init() {
 		var height = $('body').height() - 20 - parseInt($('.top').css('height')) - parseInt($('.filter-wrapper').css('height'))
@@ -278,11 +282,11 @@ $(function () {
 			limit: 10,
 			cols: [[ //表头
 				{align: 'center', width: 60, field: 'id', title: '序号'},
-				{align: 'center', width: 240, field: 'v1', title: '所属代理'},
-				{align: 'center', width: 160, field: 'v2', title: '商户号'},
-				{align: 'center', width: 110, field: 'v3', title: '手机号'},
-				{align: 'center', width: 110, field: 'v4', title: '商户名称'},
-				{align: 'center', width: 160, field: 'v5', title: '商户经营名称'},
+				{align: 'center', width: 200, field: 'v1', title: '所属代理'},
+				{align: 'center', width: 130, field: 'v2', title: '商户号'},
+				{align: 'center', width: 100, field: 'v3', title: '手机号'},
+				{align: 'center', width: 80, field: 'v4', title: '商户名称'},
+				{align: 'center', width: 110, field: 'v5', title: '商户经营名称'},
 				{align: 'center', width: 160, field: 'v6', title: '注册日期'},
 				{align: 'center', width: 80, field: 'v7', title: '实名日期'},
 				{align: 'center', width: 80, field: 'v8', title: '会员有效期'},
@@ -504,23 +508,103 @@ $(function () {
 				},
 			]
 		})
-		laypage.render({
-			elem: 'page',
-			layout: ['prev', 'page', 'next', 'limit', 'skip','count'],
-			count: 70, //数据总数，从服务端得到
-			jump: function(obj, first){
-				//obj包含了当前分页的所有参数，比如：
-				console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-				console.log(obj.limit); //得到每页显示的条数
-
-				//首次不执行
-				if(!first){
-					//do something
-				}
-			}
-		});
-		$('#page').appendTo($('.layui-table-body'))
 	}
+	renderPage({
+		id: '#page',
+		page: 1,
+		total: 300
+	})
+	function renderPage(options) {
+		var id = options.id
+		var page = options.page || 1
+		var total = options.total || 0
+		var pageSize = options.size || 10
+		var pageCount = Math.ceil(total / pageSize)
+		var pageEl = $(id)
+		pageEl.html('共<span class="total">' + total + '</span>条记录 <span class="page">' + page + '</span> /<span class="count">' + pageCount + '</span>页\n' +
+			'\t\t\t\t\t<section class="buttons">\n' +
+			'\t\t\t\t\t\t<a href="javascript:;" class="home">首页</a>\n' +
+			'\t\t\t\t\t\t<a href="javascript:;" class="prev">上一页</a>\n' +
+			'\t\t\t\t\t\t<a href="javascript:;" class="next">下一页</a>\n' +
+			'\t\t\t\t\t\t<a href="javascript:;" class="end">末页</a>\n' +
+			'\t\t\t\t\t\t<section class="jump">\n' +
+			'\t\t\t\t\t\t\t跳转到\n' +
+			'\t\t\t\t\t\t\t<input class="count-inp" type="text">\n' +
+			'\t\t\t\t\t\t\t页\n' +
+			'\t\t\t\t\t\t\t<img class="go" src="./images/go2.gif" alt="">\n' +
+			'\t\t\t\t\t\t</section>\n' +
+			'\t\t\t\t\t</section>')
+		var pageItem = pageEl.find('.page')
+		var home = pageEl.find('.home')
+		var end = pageEl.find('.end')
+		var prev = pageEl.find('.prev')
+		var next = pageEl.find('.next')
+		checkPage()
+		if (pageCount === 1) pageEl.find('.buttons').hide()
+		home.click(function () {
+			page = 1
+			renderPageItem()
+		})
+		end.click(function () {
+			page = pageCount
+			renderPageItem()
+		})
+		next.click(function () {
+			page++
+			renderPageItem()
+		})
+		prev.click(function () {
+			page--
+			renderPageItem()
+		})
+		function renderPageItem() {
+			pageItem.text(page)
+			checkPage()
+		}
+		$('.go').click(function () {
+			var $countInp = $('.count-inp')
+			var count = $countInp.val().trim()
+			if (!count || count <= 0) {
+				$countInp.val('')
+				return alert('请输入页号！')
+			}
+			if (count.indexOf('.') !== -1) {
+				$countInp.val()
+				return alert('请输入整数！')
+			}
+			count = parseInt(count)
+			if (isNaN(count)) {
+				$countInp.val('')
+				return alert('请输入数字！')
+			}
+			if (count > pageCount) {
+				$countInp.val('')
+				return alert('输入页号不能大于总页数！')
+			}
+			page = count
+			renderPageItem()
+		})
+		function checkPage() {
+			if (page === 1) {
+				home.hide()
+				prev.hide()
+				end.show()
+				next.show()
+			} else if (page === pageCount) {
+				home.show()
+				prev.show()
+				end.hide()
+				next.hide()
+			} else {
+				home.show()
+				prev.show()
+				end.show()
+				next.show()
+			}
+		}
+		
+	}
+	$('#page').appendTo($('.layui-table-body'))
 })
 </script>
 </body>
